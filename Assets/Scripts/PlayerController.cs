@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
 
     public CharacterController charController;
     
+    //Acceder a la cámara
+    public Camera playerCamera;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -33,8 +36,15 @@ public class PlayerController : MonoBehaviour
             moveDirection.y = jumpForce;
         }
 
+        //Aplicando gravedad
         moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
 
         charController.Move(moveDirection * Time.deltaTime);
+        
+        //Para rotar al jugador cuando se gira la cámara y este se mueve
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);    
+        }
     }
 }
