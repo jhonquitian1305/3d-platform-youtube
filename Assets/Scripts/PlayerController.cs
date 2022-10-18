@@ -27,7 +27,9 @@ public class PlayerController : MonoBehaviour
         float yStore = moveDirection.y;
         
         // Movimiento
-        moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        //moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
+        moveDirection = (transform.forward * Input.GetAxisRaw("Vertical")) +
+                        (transform.right * Input.GetAxisRaw("Horizontal"));
         moveDirection = moveDirection * moveSpeed;
         moveDirection.y = yStore;
 
