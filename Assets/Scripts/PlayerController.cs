@@ -35,6 +35,7 @@ public class PlayerController : MonoBehaviour
         //moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         moveDirection = (transform.forward * Input.GetAxisRaw("Vertical")) +
                         (transform.right * Input.GetAxisRaw("Horizontal"));
+        moveDirection.Normalize(); //Normalizar el movimiento, cuando se mueva en diagonal no sume velocidad de los dos ejes
         moveDirection = moveDirection * moveSpeed;
         moveDirection.y = yStore;
 
