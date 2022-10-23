@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     
     //Para acceder al jugador
     public GameObject playerModel;
+
+    public Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -59,5 +61,8 @@ public class PlayerController : MonoBehaviour
             playerModel.transform.rotation = Quaternion.Slerp(playerModel.transform.rotation, newRotation,
                 rotateSpeed * Time.deltaTime);
         }
+        
+        //Animando al player
+        animator.SetFloat("speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
     }
 }
