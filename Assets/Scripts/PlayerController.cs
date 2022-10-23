@@ -41,9 +41,12 @@ public class PlayerController : MonoBehaviour
         moveDirection = moveDirection * moveSpeed;
         moveDirection.y = yStore;
 
-        if (Input.GetButtonDown("Jump"))
+        if(charController.isGrounded)
         {
-            moveDirection.y = jumpForce;
+            if (Input.GetButtonDown("Jump"))
+            {
+                moveDirection.y = jumpForce;
+            }
         }
 
         //Aplicando gravedad
