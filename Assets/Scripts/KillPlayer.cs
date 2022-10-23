@@ -8,7 +8,8 @@ public class KillPlayer : MonoBehaviour
     {
         if (playerCollider.tag == "Player")
         {
-            Debug.Log("Muerto");
+            //Reapareciendo el personaje cuando muere
+            GameManager.instance.Respawn();
         }
     }
 }

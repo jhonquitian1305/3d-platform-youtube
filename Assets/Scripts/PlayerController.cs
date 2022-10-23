@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController instance;
+    
     public float moveSpeed;
     public float jumpForce;
     public float gravityScale = 5f;
@@ -21,6 +23,11 @@ public class PlayerController : MonoBehaviour
     public GameObject playerModel;
 
     public Animator animator;
+    
+    public void Awake()
+    {
+        instance = this;
+    }
     
     // Start is called before the first frame update
     void Start()
