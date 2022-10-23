@@ -64,5 +64,8 @@ public class PlayerController : MonoBehaviour
         
         //Animando al player
         animator.SetFloat("speed", Mathf.Abs(moveDirection.x) + Mathf.Abs(moveDirection.z));
+        
+        //Animando el salto del player
+        animator.SetBool("grounded", charController.isGrounded);
     }
 }
