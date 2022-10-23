@@ -36,9 +36,12 @@ public class GameManager : MonoBehaviour
     {
         PlayerController.instance.gameObject.SetActive(false);
 
+        CameraController.instance.cmBrain.enabled = false;
+
         yield return new WaitForSeconds(2f);
-        
+
         PlayerController.instance.transform.position = respawnPosition;
+        CameraController.instance.cmBrain.enabled = true;
         PlayerController.instance.gameObject.SetActive(true);
     }
 }
