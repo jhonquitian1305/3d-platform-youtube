@@ -38,7 +38,11 @@ public class GameManager : MonoBehaviour
 
         CameraController.instance.cmBrain.enabled = false;
 
+		UIManager.instance.fadeToBlack = true;
+
         yield return new WaitForSeconds(2f);
+
+		UIManager.instance.fadeFromBlack = true;
 
         PlayerController.instance.transform.position = respawnPosition;
         CameraController.instance.cmBrain.enabled = true;
