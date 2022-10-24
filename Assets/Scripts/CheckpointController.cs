@@ -23,7 +23,13 @@ public class CheckpointController : MonoBehaviour
         if (playerCollider.tag == "Player")
         {
             GameManager.instance.SetSpawnPoint(transform.position);
-            Debug.Log("Spawn Set");
+            CheckpointController[] allCP = FindObjectsOfType<CheckpointController>();
+            for (int i = 0; i<allCP.Length; i++)
+            {
+                allCP[i].cpOFF.SetActive(true);
+                allCP[i].cpON.SetActive(false);
+            }
+                
             cpOFF.SetActive(false);
             cpON.SetActive(true);
         }
