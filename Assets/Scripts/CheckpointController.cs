@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CheckpointController : MonoBehaviour
 {
+    public GameObject cpON, cpOFF;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,8 @@ public class CheckpointController : MonoBehaviour
         {
             GameManager.instance.SetSpawnPoint(transform.position);
             Debug.Log("Spawn Set");
+            cpOFF.SetActive(false);
+            cpON.SetActive(true);
         }
     }
 }
