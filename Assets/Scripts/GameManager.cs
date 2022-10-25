@@ -47,6 +47,8 @@ public class GameManager : MonoBehaviour
         PlayerController.instance.transform.position = respawnPosition;
         CameraController.instance.cmBrain.enabled = true;
         PlayerController.instance.gameObject.SetActive(true);
+
+		HealthManager.instance.ResetHealth();
     }
 
 	public void SetSpawnPoint(Vector3 newSpawnPoint)
