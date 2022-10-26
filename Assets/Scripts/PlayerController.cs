@@ -29,6 +29,8 @@ public class PlayerController : MonoBehaviour
     public float knockbackLength = 0.5f;
     private float knockbackCounter;
     public Vector2 knockbackPower;
+
+    public GameObject[] playerPieces;
     
     public void Awake()
     {
