@@ -18,7 +18,7 @@ public class HealthManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        ResetHealth();
     }
 
     // Update is called once per frame
@@ -64,12 +64,14 @@ public class HealthManager : MonoBehaviour
                 invincCounter = invincibleLength;
             }
         }
+        UpdateUI();
     }
 
     //Resetear vida cuando morimos
     public void ResetHealth()
     {
         currentHealth = maxHealth;
+        UpdateUI();
     }
 
     public void AddHealth(int amountToHealth)
@@ -80,5 +82,12 @@ public class HealthManager : MonoBehaviour
         {
             currentHealth = maxHealth;
         }
+
+        UpdateUI();
+    }
+
+    public void UpdateUI()
+    {
+        UIManager.instance.healthText.text = currentHealth.ToString();
     }
 }
