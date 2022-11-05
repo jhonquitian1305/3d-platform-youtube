@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
     public void Respawn()
     {
         StartCoroutine(RespawnWaiter());
+        HealthManager.instance.PlayerKilled();
     }
     
     //Corrutinas (Espera un tiempo para volver a reaparecer el personaje)

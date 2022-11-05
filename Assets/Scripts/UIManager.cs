@@ -13,6 +13,7 @@ public class UIManager : MonoBehaviour
     public bool fadeToBlack, fadeFromBlack;
 
     public TMP_Text healthText;
+    public Image healthImage;
 
     void Awake()
     {
